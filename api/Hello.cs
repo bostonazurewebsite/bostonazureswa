@@ -22,7 +22,7 @@ namespace Company.Function
                 // get day of week as a string
             var DayOfWeek = DateTime.Now.DayOfWeek.ToString();
 
-            var responseMessage = $"Hello from Azure Functions this fine {DayOfWeek}!";
+            var responseMessage = $"{'message': 'Hello from Azure Functions this fine {DayOfWeek}!'}";
 
             return new OkObjectResult(responseMessage);
         }
