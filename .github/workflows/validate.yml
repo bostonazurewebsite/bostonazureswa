@@ -2,9 +2,9 @@ name: Validate HTML
 
 on:
   push:
-    branches: ['validate']
+    branches: ['validator']
   pull_request:
-    branches: ['validate']
+    branches: ['validator']
 
 jobs:
   validate:
