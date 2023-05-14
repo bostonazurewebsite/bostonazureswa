@@ -1,0 +1,22 @@
+name: Validate HTML
+
+on:
+  push:
+    branches: ['validator']
+  pull_request:
+    branches: ['validator']
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Run html5validator
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip' # caching pip dependencies
+      - run: pip install -r requirements.txt
+      - run: html5validator --root src/
